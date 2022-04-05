@@ -20,10 +20,10 @@ function PriceTracker (props) {
     };
 
     return <div className="flex m-6">
-                <div className="text-blue-500 font-bold text-sm ml-4">{props.ticker}</div>
-                <div className="text-red-500 font-bold text-sm ml-4">{price}</div>
-                <div className="text-yellow-500 font-bold text-sm ml-4 pr-4">{props.lastUpdate.toISOString()}</div>
-                <button onClick={clickHandler}className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">Get price</button>
+                <div className="text-blue-500 font-bold text-sm w-1/12">{props.ticker}</div>
+                <div className="text-red-500 font-bold text-sm w-1/6">{price}</div>
+                <div className="text-yellow-500 font-bold text-sm w-1/4">{props.lastUpdate.toLocaleString()}</div>
+                <button onClick={clickHandler}className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-1 px-1 border border-blue-700 rounded w-1/4">Get price</button>
             </div>
 }
 
