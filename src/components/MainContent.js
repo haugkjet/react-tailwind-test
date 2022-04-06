@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import PriceTracker from './PriceTracker';
+import AddAssetForm from './AddAssetForm';
+
 
 function MainContent () {
 
@@ -9,9 +11,19 @@ function MainContent () {
         {ticker : 'ETH', price: '3609.9', lastUpdate : new Date(2020,5,6)},
         {ticker : 'ADA', price: '1.9', lastUpdate : new Date(2021,5,6)},
         {ticker : 'SOL', price: '9.9', lastUpdate : new Date(2021,4,3)}
-      ];    
+      ];  
+      
+      const onSaveAssetDataHandler = (enteredAssetData) => {
+          const assetData = {
+              ...enteredAssetData,
+              id : Math.random().toString()
+          };
+          console.log (assetData);
+      };
 
-return <div className="w-3/4">
+    return <div className="w-3/4">
+
+    <AddAssetForm onSaveAssetData={onSaveAssetDataHandler}></AddAssetForm>
    
    <ul className="m-0">
     <li><PriceTracker ticker={pricesToTrack[0].ticker} price={pricesToTrack[0].price} lastUpdate={pricesToTrack[0].lastUpdate} ></PriceTracker></li>
